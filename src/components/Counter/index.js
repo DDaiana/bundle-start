@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // search for hooks; hooks only make sense with react and the belong at the top 
 
-const Counter = () => {
+const Counter = ({ title }) => {
 
     //this is render everytime the page is loaded
     // return <h3>Counter!</h3>
@@ -31,23 +31,33 @@ const Counter = () => {
         setCount(0);
     }
 
-    const style = (e) => {
-        e.target.style.color = "blue";
-    }
+    //uisng styling: a) in the sheet
+    // const style = (e) => {
+    //     e.target.style.color = "blue";
+    // }
+    // const unStyle = (e) => {
+    //     e.target.style.color = "black";
+    // }
+    // return <div className="counter">
+    //      <h3>Title</h3>
+    //      <p  onMouseOver={style} onMouseLeave={unStyle}>{count}</p>
+    //      <button onClick={() => decrement(10)}>--</button>
+    //      <button onClick={() => decrement(1)}>-</button>
+    //      <button onClick={reset}>Reset</button>
+    //      <button onClick={() => increment(1)}>+</button>
+    //      <button onClick={() => increment(10)}>++</button>
+    // </div>   
 
-    const unStyle = (e) => {
-        e.target.style.color = "black";
-    }
-
-    return <div className="counter">
-         <h3>Title</h3>
-         <p onMouseOver={style} onMouseLeave={unStyle}>{count}</p>
+    //uisng styling: b) in a css file
+    return <div className={"counter " + (count % 2 == 0 ? "even" : "odd") }>
+         <h3>{title}</h3>
+         <p className={ count < 0 ? "debt" : "" } role="figure">{count}</p>
          <button onClick={() => decrement(10)}>--</button>
          <button onClick={() => decrement(1)}>-</button>
          <button onClick={reset}>Reset</button>
          <button onClick={() => increment(1)}>+</button>
          <button onClick={() => increment(10)}>++</button>
-    </div>   
+    </div> 
         
          
 
