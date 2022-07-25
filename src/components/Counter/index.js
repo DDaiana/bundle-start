@@ -12,18 +12,34 @@ const Counter = () => {
     // so we do array distructuring 
     const [ count, setCount ] = useState(0);
 
-    const increment = () => {
-        // this does not work because we don't know the value of count when the function will be triggered
-        // setCount(count + 1)
-        //so we need to use previous value
-        setCount(prev => prev + 1)
+    // const increment = () => {
+    //     this does not work because we don't know the value of count when the function will be triggered
+    //     setCount(count + 1)
+    //     so we need to use previous value
+    //     setCount(prev => prev + 1)
+    // }
+
+    const increment = (num) => {
+        setCount(prev => prev + num)
     }
 
-    return(  
+    const decrement = (num) => {
+        setCount(prev => prev - num )
+    }
+    
+    const reset = () => {
+        setCount(0);
+    }
+
+    return (  
          <>
          <h3>Title</h3>
          <p>{count}</p>
-         <button onClick={increment}>+</button>
+         <button onClick={() => decrement(10)}>--</button>
+         <button onClick={() => decrement(1)}>-</button>
+         <button onClick={reset}>Reset</button>
+         <button onClick={() => increment(1)}>+</button>
+         <button onClick={() => increment(10)}>++</button>
          </>
          )
 
