@@ -1,32 +1,15 @@
 import React from "react";
-// import Counter from './components/Counter';
 import { Counter } from './components';
 import '../public/default.css';
 
-
-// const App = () => {
-//     return (
-//     <>
-//     <h1>App!</h1>
-//     <h2>The future of magic</h2>
-//     <Counter tile="potions"/>
-//     <Counter tile="teas"/>
-//     <Counter tile="papers"/>
-//     <Counter tile="pencils"/>
-//     <Counter tile="plant"/>
-//     </>
-//     )
-// }
-
-// avoiding the hardcode
 const App = () => {
 
-    const products = ["potion", "fire heal", "bicycle"];
+    const albums = ["Isolation", "Sin Miedo(del Amor y Otros Demonios)"];
 
     return <>
-    <h1>App!</h1>
-    <h2>The future of magic</h2>
-    {products.map (p => <Counter title={p} />)}
+    <h1>LAP3 Exercise</h1>
+    <h2>Kali Uchis</h2>
+    {albums.map (a => <Counter title={a} />)}
     </>
     
     
