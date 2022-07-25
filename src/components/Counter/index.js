@@ -31,17 +31,25 @@ const Counter = () => {
         setCount(0);
     }
 
-    return (  
-         <>
+    const style = (e) => {
+        e.target.style.color = "blue";
+    }
+
+    const unStyle = (e) => {
+        e.target.style.color = "black";
+    }
+
+    return <div className="counter">
          <h3>Title</h3>
-         <p>{count}</p>
+         <p onMouseOver={style} onMouseLeave={unStyle}>{count}</p>
          <button onClick={() => decrement(10)}>--</button>
          <button onClick={() => decrement(1)}>-</button>
          <button onClick={reset}>Reset</button>
          <button onClick={() => increment(1)}>+</button>
          <button onClick={() => increment(10)}>++</button>
-         </>
-         )
+    </div>   
+        
+         
 
     
 }
